@@ -1,0 +1,481 @@
+@import url("../node_modules/reset.css/reset.css");
+@import url("../node_modules/normalize.css/normalize.css");
+:root {
+  --white: #ffff;
+  --primare-color: #000000;
+  --accent-color: #996b60;
+}
+
+@font-face {
+  font-family: "Liberator Serif";
+  src: url("./assets/font/LiberationSerif-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+[class*="-container"] {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.button {
+  font-size: 0.75rem;
+  color: var(--white);
+  border: 1px solid var(--white);
+  background-color: transparent;
+  padding: 1.25em 3.25em;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--primare-color);
+  }
+}
+.button--dark {
+  background-color: var(--primare-color);
+  color: var(--white);
+  border: 1px solid var(--primare-color);
+  &:hover {
+    background-color: var(--white);
+    color: var(--primare-color);
+    border: 1px solid var(--primare-color);
+  }
+}
+
+.to-shop {
+  margin-top: 1.5em;
+  width: fit-content;
+  align-self: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  color: var(--primare-color);
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primare-color);
+    transition: width 0.2s ease-in-out;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+      height: 2px;
+    }
+  }
+}
+
+.link {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.2s ease-in-out;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+      height: 2px;
+    }
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.notification {
+  position: relative;
+  background-color: #191919;
+  padding: 20px 0;
+  &-text {
+    color: var(--white);
+    text-align: center;
+  }
+  &-close-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: var(--white);
+    transform: translate(0, -50%);
+    cursor: pointer;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 999999;
+  flex-direction: column;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5em 0;
+    width: 100%;
+  }
+  &-nav {
+    .nav-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.75em;
+      &__item {
+        a {
+          white-space: nowrap;
+          color: var(--white);
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100%;
+  .hero {
+    display: flex;
+
+    .right-side {
+      padding: 6.25em 3.125em;
+      display: flex;
+      align-items: flex-end;
+      color: var(--white);
+      background-color: var(--accent-color);
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5em;
+        .heading {
+          font-family: "Liberator Serif";
+          font-size: 4.563rem;
+          margin: 0;
+        }
+        .description {
+          font-size: 1.125rem;
+          max-width: 570px;
+          line-height: 1.5;
+        }
+        .button {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}
+
+.parteners {
+  .parteners-container {
+    padding: 3.125em 0;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .partener-item {
+      max-width: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5em;
+      &__description {
+        font-size: 1.125rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.products-section {
+  .products-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.125em 0;
+    border-bottom: 1px solid gray;
+    .products {
+      &-heading {
+        font-family: "Liberator";
+        font-size: 4rem;
+        text-align: center;
+      }
+    }
+    .products {
+      display: flex;
+      margin-top: 5em;
+      gap: 3.125em;
+      .product {
+        &-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.2em;
+        }
+        &-name {
+          font-size: 1.983rem;
+          font-family: "Liberator";
+        }
+        &-description {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.aperitife-section {
+  .aperitife-container {
+    padding: 3.125em 0;
+    border-bottom: 1px solid gray;
+    .aperitife-content {
+      margin-top: 3.78em;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .aperitife-heading {
+        font-size: 3.313rem;
+        font-family: "Liberator";
+        line-height: 1;
+        margin: 0;
+      }
+      .aperitife-description {
+        max-width: 550px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.feature-container {
+  display: flex;
+  padding: 3.125em 0;
+  .feature__left-side {
+    padding-right: 3.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.87em;
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25em;
+    }
+    .feature-name {
+      font-family: "Liberator";
+      font-size: 2.25rem;
+    }
+    .feature-description {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.testimonial {
+  background-color: var(--primare-color);
+  padding: 3.125em 0;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+  }
+  &-item {
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25em;
+    &__message {
+      text-align: center;
+      font-size: 1.125rem;
+    }
+    &__author {
+      font-size: 0.87rem;
+      text-transform: uppercase;
+    }
+    &__verify {
+      opacity: 0.4;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.diferent {
+  padding: 3.125em 0;
+  .diferent-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &__right-side {
+    padding: 0 0 0 6.87em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &-heading {
+    font-family: "Liberator";
+    font-size: 4rem;
+  }
+  &-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.18em;
+    align-items: flex-start;
+    .to-shop {
+      align-self: flex-start;
+    }
+  }
+}
+
+.mood {
+  background-image: url("./assets/img/mood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  &-container {
+    display: flex;
+  }
+  .content-box {
+    margin: 3.75em;
+    color: var(--white);
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+  }
+  &-heading {
+    font-family: "Liberator";
+    font-size: 3.438rem;
+  }
+  &-content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5em;
+    gap: 1.25em;
+    background-color: var(--primare-color);
+  }
+  &-text {
+    max-width: 412px;
+    text-align: center;
+  }
+  &-content-second-box {
+    display: flex;
+    padding: 2.5em;
+    background-color: var(--primare-color);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25em;
+    .social {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      a {
+        text-decoration: none;
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 3.75em 0;
+  color: var(--white);
+  background-color: var(--primare-color);
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25em;
+  }
+  &__right-side {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 660px;
+  }
+  &__left-side {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+    .footer-heading {
+      font-family: "Liberator";
+      font-size: 2.62rem;
+    }
+    .footer-description {
+      font-size: 1.125rem;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      height: 53px;
+      width: 100%;
+      border-bottom: 1px solid var(--white);
+      input {
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        text-transform: uppercase;
+        width: 100%;
+        outline: none;
+      }
+      button {
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        color: var(--white);
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
+  &-explore {
+    &__list {
+      margin-top: 1.8em;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25em;
+    }
+    h4 {
+      text-transform: uppercase;
+      font-size: 0.87rem;
+    }
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      opacity: 0.5;
+      color: var(--white);
+    }
+  }
+}

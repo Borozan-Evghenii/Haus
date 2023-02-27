@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.58.3"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "reset.css": "^2.0.2"
+  },
+  "name": "haus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build index.html --out-dir=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borozan-Evghenii/Haus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borozan-Evghenii/Haus/issues"
+  },
+  "homepage": "https://github.com/Borozan-Evghenii/Haus#readme",
+  "description": ""
+}
